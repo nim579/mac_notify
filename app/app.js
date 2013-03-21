@@ -11,7 +11,9 @@ exports.send = function(message, header){
     command += ' -message "' + message + '" -title "' + header + '"'
     
     exec(command, function(e){
-        console.log(e);
+        if(e){
+            console.log(e);
+        }
         console.log('Sended!');
     });
 }

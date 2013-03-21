@@ -1,18 +1,21 @@
 {
   "name": "mac_notify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Show MAC notification",
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nim579/mac_notify.git"
+  },
   "keywords": [
     "mac",
     "notifications",
     "notify"
   ],
   "author": "Nikolay Ivanushkin",
-  "license": "MIT",
+  "license": "BSD",
   "readmeFilename": "README.md"
 }
