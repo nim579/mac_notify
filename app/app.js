@@ -36,9 +36,9 @@ exports.send = function(newOptions){
             command = "'"+path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier')+"'";
             command += macAttr(options);
             break;
-        case 'win32':
+        case 'win32', 'win64':
             command = "'"+path.join(__dirname, '../lib/notify-send.exe')+"'";
-            command += linuxAttr(options);
+            command += winAttr(options);
             break;
         default:
             command = 'notify-send';
@@ -71,6 +71,15 @@ function linuxAttr(options){
     if(options.group) attrs += ' -c "' + options.group + '"';
     if(options.urgency) attrs += ' -u "' + options.urgency + '"';
     if(options.expireTime) attrs += ' -t "' + options.expireTime + '"';
+    if(options.icon) attrs += ' -i "' + options.icon + '"';
+    return attrs;
+}
+
+function winAttr(options){
+    var attrs = ''
+    if(options.title) attrs += ' "' + options.title + '"';
+    if(options.message) attrs += ' "' + options.message + '"';
+    if(options.expireTime) attrs += ' -t ' + options.expireTime;
     if(options.icon) attrs += ' -i "' + options.icon + '"';
     return attrs;
 }
