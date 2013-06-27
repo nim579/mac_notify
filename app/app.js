@@ -11,22 +11,15 @@ exports.send = function(newOptions){
         group: 'ALL',
         
         urgency: 'low',
-        expireTime: 1000,
-        icon: null
-    }
-    
-    if( typeof(newOptions) == 'object' ){
-        for(argument in newOptions){
-            if(newOptions[argument]){
-                options[argument] = newOptions[argument]
-            }
-        }
+        expireTime: 3000,
+        icon: ''
     }
 
-    var attrs = ''
-    for(option in options){
-        if(options[option] != ''){
-            attrs += ' -' + option + ' "' + options[option] + '"';
+    if( typeof(newOptions) == 'object' ){
+        for(argument in newOptions){
+            if(newOptions[argument] != undefined){
+                options[argument] = newOptions[argument]
+            }
         }
     }
 
@@ -36,7 +29,8 @@ exports.send = function(newOptions){
             command = "'"+path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier')+"'";
             command += macAttr(options);
             break;
-        case 'win32', 'win64':
+        case 'win32':
+        case 'win64':
             command = "'"+path.join(__dirname, '../lib/notify-send.exe')+"'";
             command += winAttr(options);
             break;
