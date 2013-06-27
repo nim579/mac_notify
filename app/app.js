@@ -69,8 +69,8 @@ function linuxAttr(options){
     if(options.title) attrs += ' "' + options.title + '"';
     if(options.message) attrs += ' "' + options.message + '"';
     if(options.group) attrs += ' -c "' + options.group + '"';
-    if(options.urgency) attrs += ' -t "' + options.urgency + '"';
-    if(options.expireTime) attrs += ' -u "' + options.expireTime + '"';
+    if(options.urgency) attrs += ' -u "' + options.urgency + '"';
+    if(options.expireTime) attrs += ' -t "' + options.expireTime + '"';
     if(options.icon) attrs += ' -i "' + options.icon + '"';
     return attrs;
 }
