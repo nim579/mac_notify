@@ -12,7 +12,8 @@ exports.send = function(){
     
     if( typeof(arguments[0]) == 'object' ){
         for(argument in arguments[0]){
-            if(options[argument] != null && arguments[0] != undefined){
+            console.log(argument);
+            if(arguments[0] != undefined){
                 options[argument] = arguments[0][argument]
             }
         }
