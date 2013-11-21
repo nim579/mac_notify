@@ -1,6 +1,6 @@
 {
   "name": "mac_notify",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Show MAC notification",
   "main": "./index.js",
   "scripts": {

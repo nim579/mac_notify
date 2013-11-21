@@ -34,7 +34,8 @@ exports.send = function(){
         }
     }
     
-    var command = path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier');
+    var command = "'"+path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier')+"'";
+    console.log('command', command);
     command += attrs
     
     exec(command, function(e){
