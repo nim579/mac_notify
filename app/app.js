@@ -12,14 +12,12 @@ exports.send = function(){
     
     if( typeof(arguments[0]) == 'object' ){
         for(argument in arguments[0]){
-            if(options[argument] != null && arguments[0] != undefined){
-                options[argument] = arguments[0][argument]
-            }
+            options[argument] = arguments[0][argument]
         }
     } else {
         var i = 0;
         for(option in options){
-            if(arguments[i] != null && arguments[i] != undefined){
+            if(typeof arguments[i] !== 'undefined' && arguments[i] != null){
                 options[option] = arguments[i];
             }
             i++;
@@ -33,13 +31,14 @@ exports.send = function(){
         }
     }
     
-    var command = path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier');
+    var command = "'"+path.join(__dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier')+"'";
     command += attrs
     
     exec(command, function(e){
         if(e){
-            console.log(e);
+            console.log('Error', e);
+        } else {
+            console.log('Sended!');
         }
-        console.log('Sended!');
     });
 }
