@@ -60,7 +60,7 @@ class SendNotify
 
     _generateCommandMac: (options)->
         command = []
-        command.push path.join __dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier'
+        command.push "'#{path.join __dirname, '../lib/terminal-notifier.app/Contents/MacOS/terminal-notifier'}'"
 
         command.push "-title \"#{options.title}\""       if options.title
         command.push "-subtitle \"#{options.subtitle}\"" if options.subtitle
@@ -71,7 +71,7 @@ class SendNotify
 
     _generateCommandWin: (options)->
         command = []
-        command.push path.join(__dirname, '../lib/notify-send.exe')
+        command.push "'#{path.join(__dirname, '../lib/notify-send.exe')}'"
 
         command.push "\"#{options.title}\""              if options.title
         command.push "\"#{options.message}\""            if options.message
