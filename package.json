@@ -1,10 +1,11 @@
 {
   "name": "mac_notify",
-  "version": "0.2.0",
-  "description": "Show MAC notification",
+  "version": "1.0.0",
+  "description": "Show notifications",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/coffee -b -o ./app -c ./src/notify.coffee"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   ],
   "author": "Nikolay Ivanushkin",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "coffee-script": "^1.9.1"
+  }
 }
