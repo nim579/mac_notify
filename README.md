@@ -1,17 +1,18 @@
-MacOS notify
-============
+#MacOS notifications
 
 Notifications from Node.js apps for MacOS, Windows and Linux (Ubuntu).
 
 Methods
 -------
 
-**send**
+**send(options[, callback])**
 
 ```js
 var mac_notify = require('mac_notify');
 
-mac_notify.send({title: 'Title', subtitle: 'subtitle', message: 'message', group: 'group'});
+mac_notify.send({title: 'Title', subtitle: 'subtitle', message: 'message', group: 'group'}, function(err){
+	if(!err) console.log('success');
+});
 ```
 
 For MacOS
